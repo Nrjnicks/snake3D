@@ -68,29 +68,29 @@ Current Tags: “Wall” for obstacles, “SnakeBody” for Snake tails and “Fruit” for 
 #Public Variables open to developer/designer/tester
 
 ##LevelManagerClass
-1. Inscribed radius of procedural polygon: Radius of circle which can be inscribed the polygon for Procedural playground generation.
-2. Playground list: list of all custom made playground for Custom levels.
-3. Max procedural level: assigning a winning level for Procedural levels. (0 or negative means-not defined)
-4. Min fruit for next level: how many fruits to consumed by snake to jump to next level
+1. **Inscribed radius of procedural polygon:** Radius of circle which can be inscribed the polygon for Procedural playground generation.
+2. **Playground list:** list of all custom made playground for Custom levels.
+3. **Max procedural level:** assigning a winning level for Procedural levels. (0 or negative means-not defined)
+4. **Min fruit for next level:** how many fruits to consumed by snake to jump to next level
 
 ##SnakeManagerClass
-1. Snake head prefab: pre-fabricated head of snake
-2. Snake hail prefab: pre-fabricated tail of snake
-3. Collision star prefab: pre-fabricated animation object of rotating stars
-4. Speed: speed by which snake will move
-5. Length of snake body: length of body to estimate distance to instantiate next body at
-6. Min distance between two snake body: distance between two body parts (or ducklings (as mentioned way above))
+1. **Snake head prefab:** pre-fabricated head of snake
+2. **Snake hail prefab:** pre-fabricated tail of snake
+3. **Collision star prefab:** pre-fabricated animation object of rotating stars
+4. **Speed:** speed by which snake will move
+5. **Length of snake body:** length of body to estimate distance to instantiate next body at
+6. **Min distance between two snake body:** distance between two body parts (or ducklings (as mentioned way above))
 
 ##FruitManagerClass
-1. Fruit Types: list of all type of fruits which can be instantiated
+1. **Fruit Types:** list of all type of fruits which can be instantiated
 
 ##UIManagerClass
-1. [all public variable are pointers to GameObjects]
+1. **[all public variable are pointers to GameObjects]**
 
 ##SoundManagerClass
-1. Music volume: volume of game music 
-2. Sound volume: volume of game sound
-3. [Other sound clips: sound clips for different events]
+1. **Music volume:** volume of game music 
+2. **Sound volume:** volume of game sound
+3. **[Other sound clips: sound clips for different events]**
 
 #End Note
 I used name of variables and methods such everything in intuitive and easy to understand. I hope you find it easy to read and execute.
