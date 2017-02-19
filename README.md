@@ -48,7 +48,7 @@ This idea was followed by the cute duck and duckling motion. As the Snake collid
 #Technical Flow
 
 ##Architectural Design
-![alt text](https://raw.githubusercontent.com/nrjnicks/snake3D/master/Image/ArchitecturalDesign.png "ArchitecturalDesign")
+![alt text](https://raw.githubusercontent.com/Nrjnicks/snake3D/master/Images/ArchitecturalDesign.png "ArchitecturalDesign")
 
 ##Technical Flow in words
 Game starts with initializing variable which should be initialized once throughout the game like Class objects, tag names, setting parents/child, delegates and events, game music etc. by init() function. UI shows information of two game types (Custom or Procedural) and then waits for player’s response to UI which decide the game type and reset parameters in GameManagerClass like level, etc.
