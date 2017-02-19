@@ -9,7 +9,7 @@ Casual game
 Snake eats fruit in an enclosed shape and avoid obstacles. Fruits spawns at random position within the playground. There are two main parts of game, Custom levels and Procedural level. In Custom level, snake has to avoid obstacle in prebaked playground and where as in Procedural level, enclosed shape is a regular polygon with obstacles spawning at random position within playground.
 
 ##Platform
-This game is developed using Unity3D multiplatform game engine. Game was initially developed to be played over android platform, but game’s simple swipe control allows the gameplay to function with arrow key of joystick controller or keyboard.
+This game is developed using Unity3D game engine. Game was initially developed to be played over android platform, but game’s simple swipe control allows the gameplay to function with arrow key of joystick controller or keyboard.
 
 #Game Mechanics
 
@@ -24,7 +24,8 @@ If player chooses Custom level, playground corresponding to level 1 is instantia
 
 If player chooses Procedural level, an equilateral triangle (minimum sided polygon) is generated along with Snake head and two tails. After this a Fruit is instantiated at random position inside polygon. Snake is assigned with random velocity in 4 planar directions (up, down, left, right). Each time Snake eats a Fruit, another Fruit and an Obstacle are instantiated at two different random position inside the polygon and a tail is increased in Snake. Snake has to eat a predefined value of minimum number of fruits to eat to surpass any level. If snake eats equal to requirement, player has now option to jump to next level or continue playing this level. If player chooses to go next level, polygon with +1 side is generated cycle repeats endlessly.
 
-Difficulty level: as the player moves from level 1 to next, difficult increases in both game types. In Custom level, difficulty is increased in terms of number of obstacle and their position in playground.
+##Difficulty level
+As the player moves from level 1 to next, difficult increases in both game types. In Custom level, difficulty is increased in terms of number of obstacle and their position in playground.
 In Procedural level, difficulty is increased as area within the polygon is decreased, and thus random spawning of obstacles are more clustered.
 
 ##Geometry
@@ -47,11 +48,7 @@ This idea was followed by the cute duck and duckling motion. As the Snake collid
 #Technical Flow
 
 ##Architectural Design
-[image]
-
-
-where: A [symbol]   B means: A is providing information to B, to get one, more or no output
-and:  A	[symbol] B means: B is fetching information from A, without affecting working of A (using delegate and events/actions)
+![alt tag](https://raw.githubusercontent.com/nrjnicks/snake3D/master/Image/ArchitecturalDesign.png)
 
 ##Technical Flow in words
 Game starts with initializing variable which should be initialized once throughout the game like Class objects, tag names, setting parents/child, delegates and events, game music etc. by init() function. UI shows information of two game types (Custom or Procedural) and then waits for player’s response to UI which decide the game type and reset parameters in GameManagerClass like level, etc.
@@ -69,28 +66,31 @@ Current Tags: “Wall” for obstacles, “SnakeBody” for Snake tails and “Fruit” for 
 #Public Variables open to developer/designer/tester
 
 ##LevelManagerClass
-1. Inscribed radius of procedural polygon: Radius of circle which can be inscribed inside the polygon for Procedural playground generation.
+1. Inscribed radius of procedural polygon: Radius of circle which can be inscribed the polygon for Procedural playground generation.
 2. Playground list: list of all custom made playground for Custom levels.
 3. Max procedural level: assigning a winning level for Procedural levels. (0 or negative means-not defined)
 4. Min fruit for next level: how many fruits to consumed by snake to jump to next level
 
-##SnakeManagerClass:
+##SnakeManagerClass
 1. Snake head prefab: pre-fabricated head of snake
 2. Snake hail prefab: pre-fabricated tail of snake
 3. Collision star prefab: pre-fabricated animation object of rotating stars
 4. Speed: speed by which snake will move
 5. Length of snake body: length of body to estimate distance to instantiate next body at
-6. Min distance between two snake body: distance between two ducklings (as mentioned way above)
+6. Min distance between two snake body: distance between two body parts (or ducklings (as mentioned way above))
 
-##FruitManagerClass:
+##FruitManagerClass
 1. Fruit Types: list of all type of fruits which can be instantiated
 
-##UIManagerClass:
+##UIManagerClass
 1. [all public variable are pointers to GameObjects]
 
-##SoundManagerClass: 
+##SoundManagerClass
 1. Music volume: volume of game music 
 2. Sound volume: volume of game sound
-3. [Other sound clips: sound clips for scenario]
+3. [Other sound clips: sound clips for different events]
+
+#End Note
+I used name of variables and methods such everything in intuitive and easy to understand. I hope you find it easy to read and comply.
 
 
