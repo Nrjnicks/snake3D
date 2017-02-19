@@ -1,7 +1,6 @@
 #Snake 3D
 
 #Game Overview
--------------
 
 ##Game Genre
 Casual game
@@ -13,7 +12,6 @@ Snake eats fruit in an enclosed shape and avoid obstacles. Fruits spawns at rand
 This game is developed using Unity3D multiplatform game engine. Game was initially developed to be played over android platform, but game’s simple swipe control allows the gameplay to function with arrow key of joystick controller or keyboard.
 
 #Game Mechanics
---------------
 
 ##Main Technical Requirements
 The main technical requirement for this game is algorithm to procedurally generate a regular polygon playground and generating a random point inside that polygon. Other aspect of the game includes: instantiating objects from a list of object, snake movement, animations, level designing, vector math, delegates and events, etc. Also, as the game progress, difficulty should increase. In case of Custom level, we designed the level in such a way difficulty increases after each level and in case of Procedural level, we decreased the free area available for the snake.
@@ -33,7 +31,7 @@ In Procedural level, difficulty is increased as area within the polygon is decre
 One of the most used concept throughout project is of Vector Mathematics and Trigonometry. Dot products of vectors to find head on collision (see Appendix 1), cross product of vectors to find is the point inside a polygon (see Appendix 2) and most importantly, generating a regular polygon with only two parameters: number of sides and inscribed circle radius (see Appendix 3).
 
 #Motion and Animation
---------------------
+
 ##Snake
 Considering the Casual genre of the game, I wanted to make the Snake character very friendly and cute. Thus, I decided to give it a spring like body with unconstrained parts. Idea to use this motion was based on Ducklings who are following the one duckling in front of them and leading them is the Mama Duck.
 [image]
@@ -47,7 +45,7 @@ This idea was followed by the cute duck and duckling motion. As the Snake collid
 [image]
 
 #Technical Flow
---------------
+
 ##Architectural Design
 [image]
 
@@ -63,13 +61,13 @@ If player chooses Custom level, custom level parameters in LevelManagerClass is 
 If player chooses Procedural level, procedural level parameters in LevelManagerClass is initialized and a polygon of 3 sides (triangle) of side length depending on radius of inscribing a circle, is generated. Along with this, Snake head and body are instantiated in game world. Snake head is assigned a random velocity and then Fruit is instantiated at point which is inside the playground (Appendix 2). Fruit is instantiated and a bouncy animation is added to it. As Snake eats a fruit, a callback is called, which calls function to play eating sound clip (SoundManagerScript) and instantiate another fruit at another ‘valid’ random position (LevelManagerClass). This time, LevelManagerClass also instantiate a movable obstacle as part of the game. Snake can also use its tail to move the obstacle away from the fruit. If Snake collides with the obstacle, rotating stars instantiate over its head and a callback alerts UIManagerClass to display ‘Restart’ button on screen and SoundManagerClass to play crash sound. If Snake eats more than minimum requirement of, a callback alerts LevelManagerClass which callback another function of UIManagerClass which set active button on screen by clicking which player can jump to next level. If player decides to not click, he/she can still play this level till snake collides with obstacle. If player clicks on that button, UIManagerClass calls GameManagerClass to upgrade and update level and generate another polygon with +1 sides as previous level. This cycle, thus keeps repeating. 
 
 #Requirements
-------------
+
 1. Make Sure Tags provided in Scripts are configured. If not, configure them from Edit> Project Setting> Tags and Layers.
 Current Tags: “Wall” for obstacles, “SnakeBody” for Snake tails and “Fruit” for fruits.
 2. Place all empty GameObjects to world location (0,0,0). Ignoring this will not change the way our game is working, but it is good practice to place empty GameObjects at origin.
 
 #Public Variables open to developer/designer/tester
---------------------------------------------------
+
 ##LevelManagerClass
 1. Inscribed radius of procedural polygon: Radius of circle which can be inscribed inside the polygon for Procedural playground generation.
 2. Playground list: list of all custom made playground for Custom levels.
