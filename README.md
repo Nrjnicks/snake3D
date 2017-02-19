@@ -1,4 +1,5 @@
 #Snake 3D
+![alt text](https://raw.githubusercontent.com/Nrjnicks/snake3D/master/Images/snake3D.JPG "Snake3D")
 
 #Game Overview
 
@@ -35,15 +36,15 @@ One of the most used concept throughout project is of Vector Mathematics and Tri
 
 ##Snake
 Considering the Casual genre of the game, I wanted to make the Snake character very friendly and cute. Thus, I decided to give it a spring like body with unconstrained parts. Idea to use this motion was based on Ducklings who are following the one duckling in front of them and leading them is the Mama Duck.
-[image]
+![alt text](https://raw.githubusercontent.com/Nrjnicks/snake3D/master/Images/snake.JPG "Snake")
 
 ##Fruits
 Animation of Fruit is simple bouncy ball with volume constant and which follows Newton’s law of motion.
-[image]
+![alt text](https://raw.githubusercontent.com/Nrjnicks/snake3D/master/Images/Fruit.JPG "Fruit")
 
 ##Stars over head
 This idea was followed by the cute duck and duckling motion. As the Snake collides with an obstacle it stops and stars starts rotating over its heads (much like what we see in cartoons).
-[image]
+![alt text](https://raw.githubusercontent.com/Nrjnicks/snake3D/master/Images/StarsOverHead.JPG "Stars")
 
 #Technical Flow
 
