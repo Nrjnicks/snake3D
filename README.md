@@ -1,8 +1,9 @@
 #Snake 3D
-![alt text](https://raw.githubusercontent.com/Nrjnicks/snake3D/master/Images/snake3D.JPG "Snake3D")
+![alt text](https://raw.githubusercontent.com/Nrjnicks/snake3D/master/gifs/snake3D.gif "Snake3D")
 
 #Game Overview
 
+![alt text](https://raw.githubusercontent.com/Nrjnicks/snake3D/master/Images/snake3D.JPG "Snake3D")
 ##Game Genre
 Casual game
 
