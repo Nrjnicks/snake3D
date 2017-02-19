@@ -80,7 +80,7 @@ public class PlaygroundManagerClass {
 		setProceduralBoundaries (inscribedradius, sides);
 	}
 		
-	static void setProceduralBoundaries(float inscribedradius, int sides){
+	static void setProceduralBoundaries(float inscribedradius, int sides){//Appendix 3
 
 		Mesh mesh = playgroundbase.GetComponent<MeshFilter> ().mesh;
 
@@ -129,7 +129,7 @@ public class PlaygroundManagerClass {
 		meshedObj.GetComponent<MeshCollider> ().sharedMesh =	meshedObj.GetComponent<MeshFilter> ().mesh;
 	}
 
-	public static bool isPointInsidePlayground(Vector3 point){
+	public static bool isPointInsidePlayground(Vector3 point){//Appendix 2
 		for (int i = 0; i < vertices.Count; i++) {
 			if (Vector3.Cross (vertices [i] - point, vertices [(i + 1) % vertices.Count] - vertices [i]).y > 0) {
 				return false;	

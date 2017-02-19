@@ -163,7 +163,7 @@ public class SnakeManagerClass : MonoBehaviour {
 		snakeHead.up = Vector3.up;
 	}
 
-	static void onHeadOnCollision(Transform collidedObject, Vector3 collisionPoint){
+	static void onHeadOnCollision(Transform collidedObject, Vector3 collisionPoint){//Appendix 1
 		if (collidedObject.tag != fruitTagName) {
 			if (Vector3.Dot (unitVelocity, collisionPoint - snakeHead.position) > 0) {
 				onCollisionWithObstacle ();
