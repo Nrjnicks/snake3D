@@ -93,6 +93,6 @@ Current Tags: “Wall” for obstacles, “SnakeBody” for Snake tails and “Fruit” for 
 3. [Other sound clips: sound clips for different events]
 
 #End Note
-I used name of variables and methods such everything in intuitive and easy to understand. I hope you find it easy to read and comply.
+I used name of variables and methods such everything in intuitive and easy to understand. I hope you find it easy to read and execute.
 
 
