@@ -69,7 +69,7 @@ public class PlaygroundManagerClass {
 			sides = 3;
 		if (sides == 3){//triangle has the largest edge side among the polygon for fixed inscribed circle radius
 			// so large that it crossed the camera frustum
-			//so a small cheating here :P
+			//so a little cheating here :P
 			inscribedradius /= 1.5f;}
 		
 		if (playgroundboundaryparent) {
