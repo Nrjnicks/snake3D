@@ -9,5 +9,5 @@
 -----------------
 
 ##Appendix-3: Regular Polygon generation
-![alt text](https://raw.githubusercontent.com/Nrjnicks/snake3D/master/Appendix/Appendix3.jpg"Appendix3")
+![alt text](https://raw.githubusercontent.com/Nrjnicks/snake3D/master/Appendix/Appendix3.jpg "Appendix3")
 -----------------
