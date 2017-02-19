@@ -1,6 +1,7 @@
 #Snake 3D
 ![alt text](https://raw.githubusercontent.com/Nrjnicks/snake3D/master/gifs/snake3D.gif "Snake3D")
 
+Gameplay videos on [YouTube: 3D Snake game with Custom and Proceduraly generated levels](https://youtu.be/0GcFrCnOaTA)
 #Game Overview
 
 ![alt text](https://raw.githubusercontent.com/Nrjnicks/snake3D/master/Images/snake3D.JPG "Snake3D")
@@ -31,7 +32,7 @@ As the player moves from level 1 to next, difficult increases in both game types
 In Procedural level, difficulty is increased as area within the polygon is decreased, and thus random spawning of obstacles are more clustered.
 
 ##Geometry
-One of the most used concept throughout project is of Vector Mathematics and Trigonometry. Dot products of vectors to find head on collision (see Appendix 1), cross product of vectors to find is the point inside a polygon (see Appendix 2) and most importantly, generating a regular polygon with only two parameters: number of sides and inscribed circle radius (see Appendix 3).
+One of the most used concept throughout project is of Vector Mathematics and Trigonometry. Dot products of vectors to find head on collision (see Appendix 1), cross product of vectors to find that the point inside a polygon (see Appendix 2) and most importantly, generating a regular polygon with only two parameters: number of sides and inscribed circle radius (see Appendix 3).
 
 #Motion and Animation
 
