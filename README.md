@@ -1,18 +1,21 @@
-#Snake 3D
+# Snake 3D
+
 ![alt text](https://raw.githubusercontent.com/Nrjnicks/snake3D/master/gifs/snake3D.gif "Snake3D")
 
 Gameplay videos on [YouTube: 3D Snake game with Custom and Proceduraly generated levels](https://youtu.be/0GcFrCnOaTA)
-#Game Overview
+
+# Game Overview
 
 ![alt text](https://raw.githubusercontent.com/Nrjnicks/snake3D/master/Images/snake3D.JPG "Snake3D")
-##Game Genre
+
+## Game Genre
 Casual game
 
-##Game Summary
+## Game Summary
 Snake eats fruit in an enclosed shape and avoid obstacles. Fruits spawns at random position within the playground. There are two main parts of game, Custom levels and Procedural level. In Custom level, snake has to avoid obstacle in prebaked playground and where as in Procedural level, enclosed shape is a regular polygon with obstacles spawning at random position within playground.
 
 ##Platform
-This game is developed using Unity3D game engine. Game was initially developed to be played over android platform, but game’s simple swipe control allows the gameplay to function with arrow key of joystick controller or keyboard.
+This game is developed using Unity3D game engine. Game was initially developed to be played over android platform, but gameâ€™s simple swipe control allows the gameplay to function with arrow key of joystick controller or keyboard.
 
 #Game Mechanics
 
@@ -21,7 +24,7 @@ The main technical requirement for this game is algorithm to procedurally genera
 
 
 ##Game Flow
-The game will begin at Main Menu screen where player can choose between Custom level and Procedural level. Main Menu screen also has a text box which describes each objectives and characteristics of each level. After selecting one of the two level, player may click on ‘Play’ Button.
+The game will begin at Main Menu screen where player can choose between Custom level and Procedural level. Main Menu screen also has a text box which describes each objectives and characteristics of each level. After selecting one of the two level, player may click on â€˜Playâ€™ Button.
 
 If player chooses Custom level, playground corresponding to level 1 is instantiated along with Snake head and two tails. After this a Fruit is instantiated at random position inside the playground and snake is assigned with random velocity in 4 planar directions (up, down, left, right). Each time Snake eats a fruit, another fruit is instantiated at random position inside playground and a tail is increased in Snake. Snake has to eat a predefined value of minimum number of fruits to eat to surpass any level. If snake eats equal to requirement, player has now option to jump to next level or continue playing this level. If player chooses to go next level, next playground is instantiated and cycle repeats till all Custom levels are completed, after which player wins the game.
 
@@ -41,7 +44,7 @@ Considering the Casual genre of the game, I wanted to make the Snake character v
 ![alt text](https://raw.githubusercontent.com/Nrjnicks/snake3D/master/Images/snake.JPG "Snake")
 
 ##Fruits
-Animation of Fruit is simple bouncy ball with volume constant and which follows Newton’s law of motion.
+Animation of Fruit is simple bouncy ball with volume constant and which follows Newtonâ€™s law of motion.
 ![alt text](https://raw.githubusercontent.com/Nrjnicks/snake3D/master/Images/Fruit.JPG "Fruit")
 
 ##Stars over head
@@ -54,16 +57,16 @@ This idea was followed by the cute duck and duckling motion. As the Snake collid
 ![alt text](https://raw.githubusercontent.com/Nrjnicks/snake3D/master/Images/ArchitecturalDesign.png "ArchitecturalDesign")
 
 ##Technical Flow in words
-Game starts with initializing variable which should be initialized once throughout the game like Class objects, tag names, setting parents/child, delegates and events, game music etc. by init() function. UI shows information of two game types (Custom or Procedural) and then waits for player’s response to UI which decide the game type and reset parameters in GameManagerClass like level, etc.
+Game starts with initializing variable which should be initialized once throughout the game like Class objects, tag names, setting parents/child, delegates and events, game music etc. by init() function. UI shows information of two game types (Custom or Procedural) and then waits for playerâ€™s response to UI which decide the game type and reset parameters in GameManagerClass like level, etc.
 
-If player chooses Custom level, custom level parameters in LevelManagerClass is initialized and Playground, Snake head and body are instantiated in game world. Snake head is assigned a random velocity and then Fruit is instantiated at point which is inside the playground (Appendix 2) and below which no obstacle is present (if obstacle is present, Snake will not be able to eat it) (Appendix 3). Fruit is instantiated and a bouncy animation is added to it. As Snake eats a fruit, a callback is called, which calls function to play eating sound clip (SoundManagerScript) and instantiate another fruit at another ‘valid’ random position (LevelManagerClass). If Snake collides with the wall, rotating stars instantiate over its head anad a callback alerts UIManagerClass to display ‘Restart’ button on screen and SoundManagerClass to play crash sound. If Snake eats more than minimum requirement of, a callback alerts LevelManagerClass which callback another function of UIManagerClass which set active button on screenby clicking which player can jump to next level. If player decides to not click, he/she can still play this level till snake collides with obstacle. If player clicks on that button, UIManagerClass calls GameManagerClass to upgrade and update level and instantiate next playground in list. And thus, cycle repeats till max level (count of playground in list of LevelManagerClass) for Custom level, after which a game screen congratulating player is displayed.
+If player chooses Custom level, custom level parameters in LevelManagerClass is initialized and Playground, Snake head and body are instantiated in game world. Snake head is assigned a random velocity and then Fruit is instantiated at point which is inside the playground (Appendix 2) and below which no obstacle is present (if obstacle is present, Snake will not be able to eat it) (Appendix 3). Fruit is instantiated and a bouncy animation is added to it. As Snake eats a fruit, a callback is called, which calls function to play eating sound clip (SoundManagerScript) and instantiate another fruit at another â€˜validâ€™ random position (LevelManagerClass). If Snake collides with the wall, rotating stars instantiate over its head anad a callback alerts UIManagerClass to display â€˜Restartâ€™ button on screen and SoundManagerClass to play crash sound. If Snake eats more than minimum requirement of, a callback alerts LevelManagerClass which callback another function of UIManagerClass which set active button on screenby clicking which player can jump to next level. If player decides to not click, he/she can still play this level till snake collides with obstacle. If player clicks on that button, UIManagerClass calls GameManagerClass to upgrade and update level and instantiate next playground in list. And thus, cycle repeats till max level (count of playground in list of LevelManagerClass) for Custom level, after which a game screen congratulating player is displayed.
 
-If player chooses Procedural level, procedural level parameters in LevelManagerClass is initialized and a polygon of 3 sides (triangle) of side length depending on radius of inscribing a circle, is generated. Along with this, Snake head and body are instantiated in game world. Snake head is assigned a random velocity and then Fruit is instantiated at point which is inside the playground (Appendix 2). Fruit is instantiated and a bouncy animation is added to it. As Snake eats a fruit, a callback is called, which calls function to play eating sound clip (SoundManagerScript) and instantiate another fruit at another ‘valid’ random position (LevelManagerClass). This time, LevelManagerClass also instantiate a movable obstacle as part of the game. Snake can also use its tail to move the obstacle away from the fruit. If Snake collides with the obstacle, rotating stars instantiate over its head and a callback alerts UIManagerClass to display ‘Restart’ button on screen and SoundManagerClass to play crash sound. If Snake eats more than minimum requirement of, a callback alerts LevelManagerClass which callback another function of UIManagerClass which set active button on screen by clicking which player can jump to next level. If player decides to not click, he/she can still play this level till snake collides with obstacle. If player clicks on that button, UIManagerClass calls GameManagerClass to upgrade and update level and generate another polygon with +1 sides as previous level. This cycle, thus keeps repeating. 
+If player chooses Procedural level, procedural level parameters in LevelManagerClass is initialized and a polygon of 3 sides (triangle) of side length depending on radius of inscribing a circle, is generated. Along with this, Snake head and body are instantiated in game world. Snake head is assigned a random velocity and then Fruit is instantiated at point which is inside the playground (Appendix 2). Fruit is instantiated and a bouncy animation is added to it. As Snake eats a fruit, a callback is called, which calls function to play eating sound clip (SoundManagerScript) and instantiate another fruit at another â€˜validâ€™ random position (LevelManagerClass). This time, LevelManagerClass also instantiate a movable obstacle as part of the game. Snake can also use its tail to move the obstacle away from the fruit. If Snake collides with the obstacle, rotating stars instantiate over its head and a callback alerts UIManagerClass to display â€˜Restartâ€™ button on screen and SoundManagerClass to play crash sound. If Snake eats more than minimum requirement of, a callback alerts LevelManagerClass which callback another function of UIManagerClass which set active button on screen by clicking which player can jump to next level. If player decides to not click, he/she can still play this level till snake collides with obstacle. If player clicks on that button, UIManagerClass calls GameManagerClass to upgrade and update level and generate another polygon with +1 sides as previous level. This cycle, thus keeps repeating. 
 
 #Requirements
 
 1. Make Sure Tags provided in Scripts are configured. If not, configure them from Edit> Project Setting> Tags and Layers.
-Current Tags: “Wall” for obstacles, “SnakeBody” for Snake tails and “Fruit” for fruits.
+Current Tags: â€œWallâ€ for obstacles, â€œSnakeBodyâ€ for Snake tails and â€œFruitâ€ for fruits.
 2. Place all empty GameObjects to world location (0,0,0). Ignoring this will not change the way our game is working, but it is good practice to place empty GameObjects at origin.
 
 #Public Variables open to developer/designer/tester
